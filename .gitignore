@@ -1,7 +1,8 @@
 *.json
 *.xml
-__pycache__
+*.csv
 __pycache__
 logs
 
 .DS_Store
+.idea

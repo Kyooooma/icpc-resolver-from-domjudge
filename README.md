@@ -5,8 +5,8 @@ A tools to generate xml file of icpc-resolver via domjudge RESTful API.
 一键生成带有奖项信息的滚榜数据，适用于`resolver`。
 
 默认生成奖项：
-- 全场第一名（World Champion）
-- 正式队伍前三名
+- 全场第一名（Contest Champion）
+- 正式队伍前award_rank名
 - 金牌队伍
 - 银牌队伍
 - 铜牌队伍
@@ -22,6 +22,28 @@ A tools to generate xml file of icpc-resolver via domjudge RESTful API.
 `resolver`源码阅读记录：[滚榜程序Resolver源码阅读](https://blog.lanly.vip/article/7)
 
 ## 更新log
+
+### 2023.05.16
+
+魔改为适用于HZCU的校赛/新生赛
+
+以下为适用于HZCU的校赛/新生赛的`config.json`示例
+```jsonld
+{
+  "url": "https://www.example.com/api/v4/contests/{cid},
+  "username": api_reader用户名,
+  "password": api_reader密码,
+  "xml": event,
+  "gold": 0,
+  "silver": 0,
+  "bronze": 0,
+  "no_occupy_award_categories": [<group_id1>, <group_id2>, ...],
+  "award_best_girl": [<group_id1>],
+  "award_rank": 50
+}
+```
+
+新增award_rank，表示排名个数，默认为50，且只记录非打星队伍
 
 ### 2022.10.06
 

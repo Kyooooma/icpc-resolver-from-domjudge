@@ -1,5 +1,6 @@
 def indent(x):
-    return''.join(["  " for i in range(x)])
+    return ''.join(["  " for i in range(x)])
+
 
 def XML_dump(body, ind=0):
     lines = []
